@@ -167,6 +167,196 @@ Call-to-Action: “Become a Partner” button linking to enquiry form.
  ## Site Map 
  <img src="_images/gloomap_0918afec.png">
 
+ CHANGE LOG  
+
+ 
+
+Project: Gift of the Givers Foundation Website 
+ Version: v2.0 
+ Date: 29 September 2025 
+ Edited by: Samkeliswe  
+
+ 
+
+1. HTML Structure & Code Formatting 
+
+Updated all HTML files (Home, About, Services/Projects, Enquiry, Contact, Partners) to follow proper HTML5 structure: 
+
+Added <!DOCTYPE html>, <html lang="en">, <head> and <body> tags consistently. 
+
+Ensured <header>, <nav>, <main>, <section>, and <footer> semantic tags are properly used. 
+
+Removed excessive blank lines and unnecessary spacing between HTML elements for cleaner code. 
+
+Improved indentation for readability and maintainability. 
+
+ 
+
+ 
+
+2. Navigation Menu 
+
+ 
+
+Rebuilt the navigation menu using a semantic <nav> structure and properly nested <ul> and <li> tags: 
+
+ 
+
+ 
+
+ 
+
+ Added hover effects and active states for better UX. 
+
+ 
+
+Made navigation mobile responsive with a hamburger menu for smaller screens. 
+
+ 
+
+3. Home Page Content Improvements 
+
+ 
+
+ Added Mission Statement Hero Section at the top with a strong call-to-action: 
+
+Includes headline, short subtext, and Donate/Volunteer buttons. 
+
+ 
+
+Added Impact Metrics Section (e.g., “R6 Billion in Aid”, “32 Years of Service”, “47 Countries Reached”) in a 3-column pastel-coloured grid. 
+
+ 
+
+ Added Featured Programs Section highlighting Disaster Relief, Hunger Alleviation, and Water Provision with brief descriptions and “Read More” links. 
+
+ 
+
+ Added Testimonials/Success Stories Slider with real beneficiary quotes. 
+
+ 
+
+ Added Latest News/Blog Teasers to improve dynamic content and SEO. 
+
+ 
+
+ Added Newsletter Sign-Up Section near footer for engagement. 
+
+These changes address the feedback to “add more content to home page”. 
+
+ 
+
+4. Enquiry Page Enhancements 
+
+ 
+
+ Expanded enquiry page with: 
+
+A contact form that includes name, email, subject, and message fields. 
+
+A dropdown menu for enquiry type (Donations, Volunteering, Partnerships, General). 
+
+Added form validation using HTML5 attributes (required, type="email"). 
+
+ 
+
+ Added short introduction paragraph explaining why users should use the enquiry form. 
+
+ 
+
+ Included a contact info panel with helpline numbers and quick links. 
+
+ 
+
+5. Contact Page Enhancements 
+
+ 
+
+ Added Google Map Embed showing the organisation’s head office location. 
+
+ 
+
+ Structured the page into two columns: one for the contact form, one for office info and regional contact numbers. 
+
+ 
+
+ Added email links, clickable phone numbers, and operating hours. 
+
+ 
+
+ Added FAQ accordion section for common enquiries. 
+
+ 
+
+ Enhanced mobile responsiveness so forms and map display well on smaller screens. 
+
+ 
+
+6. About Page Minor Edits 
+
+ 
+
+ Adjusted content spacing to remove unnecessary gaps. 
+
+ 
+
+ Fixed typo in awards section (>Awards → Awards). 
+
+ 
+
+ Improved layout of timeline and inspiration sections for better readability. 
+
+ 
+
+7. Technical Enhancements 
+
+ 
+
+ Ensured all pages follow consistent header, navigation, and footer structure. 
+
+ 
+
+ Added SEO meta tags (title, description, keywords) to each page. 
+
+ 
+
+ Improved page load performance by: 
+
+Compressing large images. 
+
+Using loading="lazy" for below-the-fold images. 
+
+Linking external CSS and JS properly. 
+
+ 
+
+ Enabled SSL (HTTPS) across all pages for security. 
+
+ 
+
+8. Design Enhancements 
+
+ 
+
+ Introduced soft pastel colour palette (mint, sky blue, pale gold, soft pink) for visual consistency. 
+
+ 
+
+ Updated section backgrounds with subtle gradients. 
+
+ 
+
+ Used modern typography (Poppins) and improved font hierarchy for readability. 
+
+ 
+
+ Enhanced call-to-action buttons with contrasting pastel colours and hover animations. 
+
+ Responsive Design 
+
+ Mobile-first breakpoints + rem usage  
+ 
+
 
  ## References 
 
@@ -191,6 +381,13 @@ Trajectory Web Design, 2024. 20 Must-Have Features Every Nonprofit Website Needs
 WildApricot, n.d. What Potential Donors Want. [online] Available at: https://wildapricot.com [Accessed 27 August 2025]. 
 
 Zalando, n.d. Engineering Principles (API-first, microservices). [online] Available at: https://github.com [Accessed 27 August 2025]. 
+Gift of the Givers Foundation. (2025). Official Website. Available at: https://giftofthegivers.org (Accessed: 29 September 2025). 
+
+Booth, A. (2022). ‘Designing Non-Profit Websites for Maximum Impact’, Nonprofit Tech for Good. Available at: https://www.nptechforgood.com (Accessed: 29 September 2025). 
+
+Nielsen, J. (2020). ‘Top 10 Guidelines for Homepage Usability’. Nielsen Norman Group. Available at: https://www.nngroup.com (Accessed: 29 September 2025). 
+
+W3C. (2023). Web Content Accessibility Guidelines (WCAG) 2.1. World Wide Web Consortium. Available at: https://www.w3.org/WAI/ (Accessed: 29 September 2025). 
 
 Sammy, 2025. Gift of the Givers Website Wireframes, Sitemap, and Gantt Chart. [o nine] Personal work. 
 
@@ -207,3 +404,4 @@ Sammy, 2025. Gift of the Givers Website Wireframes, Sitemap, and Gantt Chart. [o
 
 
 
+"# Giftofgiverspart2" 

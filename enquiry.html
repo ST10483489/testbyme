@@ -4,6 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gift of the Givers Enquiry</title>
+
+    <style>
+         /* 🌿 Global Styles */
+         body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: 
+                linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)),
+                url('_images/photo\ 24.webp') no-repeat center center/cover;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(6px);
+        }
+
+        header img {
+            max-width: 180px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+
+    header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #3b6d4c;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #3b6d4c;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #6aa84f;
+        }
+
+            /* 🌸 Main Content */
+            main {
+            max-width: 900px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        main h2 {
+            color: #3b6d4c;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        main p {
+            text-align: center;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+          /* 📝 Form */
+          form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 500px;
+            margin: 25px auto;
+        }
+
+        label {
+            font-weight: 600;
+            color: #3b6d4c;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #6aa84f;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        
+        input[type="submit"]:hover {
+            background-color: #558b3f;
+        }
+
+        
+        /* 📍 Contact Info Section */
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            line-height: 1.8;
+        }
+
+        .contact-info h3 {
+            color: #3b6d4c;
+            margin-bottom: 10px;
+        }
+
+        
+        .map {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* 🌼 Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header img { max-width: 140px; }
+            main { margin: 15px; padding: 15px; }
+            iframe { height: 250px; }
+        }
+
+
+        
+
+    </style>
 </head>
 <body>
 
@@ -19,23 +180,44 @@
             <a href="partners.html">Partners</a> |
             
         </nav>
+                
     </header>
 
     <main>
-        <h2>Make an Enquiry</h2>
-        <p>If you’d like more information about our projects or wish to partner with us, please fill in the form below:</p>
+        <h2>We’d love to hear from you 🌿</h2>
+
+        <p>
+            Whether you're looking to <b>partner with us</b>, ask about our <b>projects</b>, or simply share your ideas,  
+            please fill in the enquiry form below. Our team will respond as soon as possible.
+        </p>
+                     
+       
         <form>
-            <label><b>Name:</b></label><br>
-            <input type="text" name="name"><br><br>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-            <label><b>Email:</b></label><br>
-            <input type="email"  name="email"><br><br>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-            <label><b>Message:</b></label><br>
-            <textarea name="Message" rows="5" cols="40"></textarea><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
 
-            <input type="submit" value="submit">
-        </form>      
+            <input type="submit" value="Submit Enquiry">
+        </form>
+        
+        <div class="contact-info" >
+            <h3>📌 Our Head Office</h3>
+            <p>
+                290 Prince Alfred Street, Pietermaritzburg, South Africa<br>
+                <b>Email:</b> info@giftofthegivers.org<br>
+                <b>Phone:</b> +27 33 345 0613 
+            </p>
+            <div class="map" >
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3468.953716953046!2d30.382777275537133!3d-29.605031675147732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef6bcf4c82e36b1%3A0xeb4f7acd6798b0f2!2s290%20Prince%20Alfred%20St%2C%20CBD%2C%20Pietermaritzburg%2C%203201!5e0!3m2!1sen!2sza!4v1756296599908!5m2!1sen!2sza" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+            </div>
+
+        </div>
        
 
     </main>

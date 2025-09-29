@@ -4,36 +4,414 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gift of the Givers Home </title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+       
+       :root{
+      --mint: #6bb7a5;
+      --aqua: #7baacb;
+      --pink: #e8a6b4;
+      --soft-bg: rgba(255,255,255,0.85);
+      --card-bg: rgba(255,255,255,0.9);
+      --glass: rgba(255,255,255,0.75);
+      --accent: linear-gradient(135deg,#7baacb,#9dc8d1);
+      --radius: 14px;
+      --shadow: 0 6px 18px rgba(20,20,20,0.12);
+    }
+
+    *{box-sizing: border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#24303a;
+      line-height:1.6;
+      background:
+      linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)),
+        url('_images/photo 32.avif') no-repeat center center/cover;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-top:72px; /* for sticky nav space */
+    }
+
+    /* Sticky translucent nav */
+    nav.sticky {
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 1100px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px) saturate(1.05);
+      border-radius: 30px;
+      padding: 10px 18px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      align-items:center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      z-index:1000;
+    }
+
+    nav.sticky a{
+      text-decoration:none;
+      color: #35544a;
+      font-weight:600;
+      padding:8px 12px;
+      border-radius:10px;
+      transition: all .22s ease;
+      font-size:0.95rem;
+    }
+    nav.sticky a:hover{ color:var(--mint); transform:translateY(-2px); }
+
+     /* Hero */
+     .hero {
+      min-height: calc(100vh - 72px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      text-align:center;
+      padding:48px 20px;
+      overflow:hidden;
+    }
+     /* animated gradient overlay */
+
+     .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02));
+      z-index:1;
+     
+    }
+
+   
+   
+
+    .hero .animated-gradient{
+      position:absolute; inset:0; z-index:2; pointer-events:none;
+      background: linear-gradient(90deg, rgba(123,170,203,0.06), rgba(232,166,180,0.04), rgba(154,201,209,0.05));
+      mix-blend-mode: overlay;
+      animation: slowShift 12s ease-in-out infinite;
+    }
+
+    @keyframes slowShift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    .hero-inner{
+      position:relative; 
+      z-index:3; 
+      max-width:920px; 
+      color: #fff;
+      display:flex; 
+      flex-direction:column; 
+      align-items:center; 
+      gap:18px;
+      padding: 28px;
+      background: rgba(0,0,0,0.25);  /* NEW: gives text a subtle readable background */
+      border-radius: 12px;  
+     
+    }
+
+    logo {
+      width:140px; height:auto; border-radius:12px; box-shadow: 0 8px 26px rgba(0,0,0,0.25);
+      background:linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+      padding:6px;
+    }
+
+    .hero-title{
+      font-size:2.6rem;
+      font-weight:700;
+      letter-spacing:0.6px;
+      text-shadow: 0 6px 22px rgba(0,0,0,0.45);
+      margin-top:6px;
+    }
+
+    .hero-sub{
+      font-size:1.1rem;
+      color: rgba(255,242,242,0.9);
+      max-width:760px;
+    }
+
+    .cta-row{display:flex; gap:12px; align-items:center; flex-wrap:wrap; justify-content:center; margin-top:6px;}
+    .btn{
+      display:inline-block;
+      padding:12px 26px;
+      border-radius:999px;
+      color:white;
+      font-weight:700;
+      text-decoration:none;
+      background: var(--accent);
+      box-shadow: 0 8px 22px rgba(123,170,203,0.16);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .btn.secondary{
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.22);
+      box-shadow:none;
+      opacity:0.95;
+    }
+
+    .btn:hover{ transform: translateY(-4px); box-shadow: 0 12px 32px rgba(50,80,80,0.12); }
+
+      /* Main card */
+      main{
+      max-width:1100px;
+      margin: 40px auto;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:36px;
+      overflow:hidden;
+    }
+    .section {
+      margin-bottom:34px;
+      padding:18px 12px;
+      border-radius:10px;
+    }
+
+    .section h2{
+      display:flex; gap:10px; align-items:center; justify-content:center;
+      color: #2f5a4a;
+      font-size:1.6rem;
+      margin-bottom:12px;
+    }
+
+    .section h2 .icon{
+      width:34px; height:34px; display:inline-grid; place-items:center;
+      background: linear-gradient(180deg, #fff, #f8fdff);
+      border-radius:8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      font-size:18px;
+      color:var(--mint);
+    }
+
+    .lead { text-align:center; color:#47585a; max-width:860px; margin:0 auto 14px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+      margin-top:18px;
+    }
+
+    .card{
+      background:var(--soft-bg);
+      padding:16px;
+      border-radius:12px;
+      box-shadow: 0 6px 18px rgba(20,20,20,0.04);
+      text-align:center;
+    }
+
+    .card h4{ color:#375f50; margin-bottom:8px; }
+    .card p{ font-size:0.95rem; color:#48585b; margin-bottom:10px; }
+
+    /* Featured image styling */
+    .featured-img{ display:block; margin:18px auto; max-width: 420px; border-radius:12px; box-shadow: 0 8px 22px rgba(0,0,0,0.08); }
+
+    /* pastel divider wave (SVG) */
+    .wave{ display:block; width:100%; margin:8px 0 28px; }
+
+       /* CTA volunteer card */
+       .cta-card{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px;
+      background: linear-gradient(135deg, rgba(107,183,165,0.08), rgba(123,170,203,0.06));
+      border-radius:12px;
+      border:1px solid rgba(107,183,165,0.12);
+    }
+    .cta-left{ display:flex; gap:14px; align-items:center; }
+    .cta-left .badge{ width:56px; height:56px; border-radius:10px; display:grid; place-items:center; font-size:26px; background:var(--mint); color:white; box-shadow: 0 8px 20px rgba(107,183,165,0.12);}
+    .cta-right{ display:flex; gap:12px; align-items:center; }
+
+     /* footer */
+     footer{
+      text-align:center;
+      padding:26px 12px;
+      color:#47585a;
+      font-size:0.95rem;
+      margin-top:30px;
+    }
+
+    /* Fade-in animation (scroll) */
+    .fade-in { opacity:0; transform: translateY(16px); transition: all 700ms cubic-bezier(.2,.9,.2,1); will-change: transform, opacity; }
+    .fade-in.visible{ opacity:1; transform: translateY(0); }
+
+     /* Responsive */
+     @media (max-width:980px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .hero-title{ font-size:2.2rem; }
+    }
+    @media (max-width:680px){
+      .grid{ grid-template-columns: 1fr; }
+      .cta-card{ flex-direction:column; text-align:center; }
+      nav.sticky{ left:12px; transform:none; width:calc(100% - 24px); max-width:none; }
+      body{ padding-top:88px; }
+    }
+
+     /* Back to top */
+     #backToTop{
+      display:none;
+      position:fixed; right:22px; bottom:26px;
+      background:var(--aqua); color:#fff; border:0;
+      width:48px;height:48px;border-radius:50%;
+      font-size:20px; cursor:pointer; box-shadow:0 8px 22px rgba(0,0,0,0.15);
+      z-index:1200;
+    }
+
+    #backToTop:hover{ transform: translateY(-4px); }
+
+        
+    </style>
+   
+    
 </head>
 <body>
-    <!--Navigation Menu -->
-    <header>
-        <h1>Gift of the Givers</h1>
-        <img src="_images/Gift of the.jpg" alt="Gift of the Givers Relief Work" width="300">
-        <nav>
-            <a href="index.html"><b>Home</b></a> |
-            <a href="about.html">About Us</a> |
-            <a href="services.html">Services</a> |
-            <a href="enquiry.html">Enquiry</a> |
-            <a href="contact.html">Contact</a> |
-            <a href="partners.html">Partners</a> |
-            
-        </nav>
-    </header>
+    
+  <!-- Sticky nav -->
+  <nav class="sticky" role="navigation" aria-label="Main navigation">
+    <a href="index.html"><strong>Home</strong></a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contact.html">Contact</a>
+    <a href="partners.html">Partners</a>
+  </nav>
+  <!-- Hero -->
+  <header class="hero" role="banner" >
+    <div class="animated-gradient" aria-hidden="true"></div>
+    <div class="hero-inner" role="region" aria-label="Introduction">
+      <img src="_images/Gift of the.jpg" alt="Gift of the Givers logo" class="logo">
+      <h1 class="hero-title">Gift of the Givers</h1>
+      <p class="hero-sub">Saving lives • Restoring dignity • Building hope — rapid disaster response, water & healthcare, and long-term community support.</p>
 
-    <main>
-        <h2>Welcome to the Gift of the Givers</h2>        
-        <p><b>Gift of the Givers</b> is Africa's largest disaster response NGO , providing humanitaran aid across the globe.</p>
-       
-        <img src="_images/photo 15.jpg" alt="Gift of the Givers Relief Work" width="300">
-        <p>We are committed to <b>saving lives</b>restoring dignity, and making a lasting impact in times of a crisis.</p>
-        <p>Join us in making in a difference today</p>
-        <img src="_images/photo 8.avif" alt="Making a difference" width="300">
-    </main>
+      <div class="cta-row">
+        <a class="btn" href="donate.html" aria-label="Donate to Gift of the Givers">Join Our Mission</a>
+        <a class="btn secondary" href="enquiry.html" aria-label="Volunteer with Gift of the Givers">Volunteer</a>
+      </div>
+    </div>
+    
+  </header>
+  
+  <!-- Main content card -->
 
+  <main>
+      <!-- Impact -->
+      <section class="section fade-in" id="impact">
+        <h2><span class="icon" aria-hidden="true">🌍</span> Our Impact</h2>
+        <p class="lead">Over <strong>R6 billion in aid</strong> delivered across <strong>47 countries</strong> over a legacy spanning <strong>33 years</strong>.</p>
+  
+        <div class="grid">
+          <div class="card">
+            <h4>Disaster Response</h4>
+            <p>Rapid on-the-ground teams for floods, fires, and emergencies — food, shelter & medical care.</p>
+          </div>
+          <div class="card">
+            <h4>Water & Sanitation</h4>
+            <p>Borehole drilling, purification systems and tanker deliveries to restore safe water access.</p>
+          </div>
+          <div class="card">
+            <h4>Healthcare</h4>
+            <p>Medical teams, equipment and mobile clinics delivering life-saving care where needed.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Wave divider -->
+    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,80 C360,10 1080,150 1440,60 L1440 120 L0 120 Z" fill="#f7fffb" opacity="0.95"></path>
+    </svg>
+
+    <!-- Featured projects -->
+    <section class="section fade-in" id="projects">
+      <h2><span class="icon" aria-hidden="true">🤝</span> Featured Projects</h2>
+      <p class="lead">We respond worldwide — recent efforts include flood relief, humanitarian support and rebuild projects.</p>
+      <img src="_images/photo 18.jpg" alt="Featured projects" class="featured-img">
+    </section>
+
+    <!-- Wave divider -->
+    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,20 C360,120 1080,0 1440,80 L1440 120 L0 120 Z" fill="#ffffff" opacity="0.95"></path>
+    </svg>
+    <section class="section fade-in" id="join">
+      <h2><span class="icon" aria-hidden="true">💚</span> Join Our Mission</h2>
+      <p class="lead">Donate, volunteer, or partner with us — every action helps restore hope and dignity.</p>
+
+      <div class="cta-card">
+        <div class="cta-left">
+          <div class="badge" aria-hidden="true">✊</div>
+          <div>
+            <h3 style="margin:0;color:#235443">Become a volunteer or partner</h3>
+            <p style="margin:6px 0 0;color:#405a53">Skilled volunteers and partners make our work possible. Join a team or start a fundraising drive.</p>
+          </div>
+        </div>
+
+        <div class="cta-right">
+          <a class="btn" href="enquiry.html">Make an Enquiry</a>
+          <a class="btn secondary" href="partners.html">Become a Partner</a>
+        </div>
+      </div>
+    </section>
+    <!-- Wave divider -->
+    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,80 C360,10 1080,150 1440,60 L1440 120 L0 120 Z" fill="#f7fffb" opacity="0.95"></path>
+    </svg>
+    <!-- Quick facts / numbers -->
+    <section class="section fade-in" id="facts">
+      <h2><span class="icon" aria-hidden="true">📊</span> Quick Facts</h2>
+      <p class="lead">Small teams, big results — facts that show the scale of our work.</p>
+
+      <div class="grid">
+        <div class="card"><h4>R6+ billion</h4><p>Value of aid delivered</p></div>
+        <div class="card"><h4>47 countries</h4><p>Where we've worked</p></div>
+        <div class="card"><h4>33 years</h4><p>Serving with a legacy</p></div>
+      </div>
+    </section>
+    
+  </main>
+   <!-- Back to top -->
+   <button id="backToTop" aria-label="Back to top">↑</button>
+    
+
+    
     <footer>
         <p>&copy; 2025 Gift of the Givers | All Rights Reserved </p>
     </footer>
+     <!-- JS: scroll animations, sticky tweaks, back-to-top -->
+  <script>
+    // Fade-in on scroll (IntersectionObserver)
+    (function(){
+      const items = document.querySelectorAll('.fade-in');
+      const obs = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18 });
+      items.forEach(i => obs.observe(i));
+    })();
+    
+    // Back to top button
+    const topBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 420) topBtn.style.display = 'block';
+      else topBtn.style.display = 'none';
+    });
+    topBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+  </script>
+
     
 </body>
 </html>
