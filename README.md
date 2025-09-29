@@ -405,3 +405,4 @@ Sammy, 2025. Gift of the Givers Website Wireframes, Sitemap, and Gantt Chart. [o
 
 
 "# Giftofgiverspart2" 
+"# giftofthegiversPart2" 
